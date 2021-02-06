@@ -24,6 +24,7 @@ const port = 3000
  */
 
 const commandeRouter = require('./routes/commande');
+const router = require('./routes/commande');
 
 
 /**
@@ -51,6 +52,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/big-faim/api/commande' , commandeRouter);
+
+app.get('/',(req,res) => {
+    res.send('hello it\'s wors !');
+});
 
 db.sync({
     //force: true
